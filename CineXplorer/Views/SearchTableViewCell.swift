@@ -14,6 +14,8 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet var titleMovieLabel: UILabel!
     @IBOutlet var yearMovieLabel: UILabel!
     @IBOutlet var posterMovieImage: UIImageView!
+    @IBOutlet var overvwiewLabel: UILabel!
+    @IBOutlet var vote: UILabel!
     
     
 }

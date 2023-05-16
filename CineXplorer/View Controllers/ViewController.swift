@@ -21,12 +21,15 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         field.delegate = self
         
+        addLeftImageTo(textField: field, andImage: UIImage(named: "search")!)
+        tableView.backgroundColor = .darkGray
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchMovies()
         return true
     }
+    
     
     func searchMovies() {
         field.resignFirstResponder()
@@ -54,6 +57,7 @@ class ViewController: UIViewController {
             
             
             let newMovies = finalResult.results
+            
             self.movies.append(contentsOf: newMovies)
             
             
@@ -78,6 +82,8 @@ extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewD
         
         cell.titleMovieLabel.text = self.movies[indexPath.row].title
         cell.yearMovieLabel.text = self.movies[indexPath.row].releaseDate
+        cell.overvwiewLabel.text = self.movies[indexPath.row].overview
+        cell.vote.text = self.movies[indexPath.row].voteAverageString
         if let posterPath = self.movies[indexPath.row].posterPath,
            let url = URL(string: poster + posterPath) {
             if let data = try? Data(contentsOf: url) {

@@ -18,6 +18,10 @@ struct Movie: Codable {
     let releaseDate, title: String
     let voteAverage: Double
     
+    var voteAverageString: String {
+            return String(format: "%.1f", voteAverage)
+        }
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case overview
