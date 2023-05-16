@@ -22,12 +22,25 @@ class ViewController: UIViewController {
         field.delegate = self
         
         addLeftImageTo(textField: field, andImage: UIImage(named: "search")!)
-        tableView.backgroundColor = .darkGray
+        tableView.backgroundColor = .black
+        
+        fetchPopularMovies()
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchMovies()
-        return true
+        textField.resignFirstResponder()
+            
+            guard let text = textField.text else {
+                return true
+            }
+            
+            if text.isEmpty {
+                fetchPopularMovies()
+            } else {
+                searchMovies()
+            }
+            
+            return true
     }
     
     
@@ -69,6 +82,44 @@ class ViewController: UIViewController {
         }).resume()
         
     }
+    
+    func fetchPopularMovies() {
+        field.resignFirstResponder()
+        
+        guard let text = field.text, text.isEmpty else { return }
+
+        
+        movies.removeAll()
+        
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)")!,
+                                   completionHandler: { data, response, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            var result: MovieResult?
+            do {
+                result = try JSONDecoder().decode(MovieResult.self, from: data)
+            }
+            catch {
+                print("error")
+            }
+            
+            guard let finalResult = result else { return }
+            
+            
+            let newMovies = finalResult.results
+            
+            self.movies.append(contentsOf: newMovies)
+            
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            
+        }).resume()
+    }
+        
 }
 
 extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -93,6 +144,18 @@ extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewD
         
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        let verticalPadding: CGFloat = 8
+
+        let maskLayer = CALayer()
+        maskLayer.cornerRadius = 10    //if you want round edges
+        maskLayer.backgroundColor = UIColor.black.cgColor
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+        cell.layer.mask = maskLayer
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
