@@ -131,17 +131,29 @@ extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
-        cell.titleMovieLabel.text = self.movies[indexPath.row].title
-        cell.yearMovieLabel.text = self.movies[indexPath.row].releaseDate
-        cell.overvwiewLabel.text = self.movies[indexPath.row].overview
-        cell.vote.text = self.movies[indexPath.row].voteAverageString
-        if let posterPath = self.movies[indexPath.row].posterPath,
-           let url = URL(string: poster + posterPath) {
-            if let data = try? Data(contentsOf: url) {
-                cell.posterMovieImage.image = UIImage(data: data)
+        DispatchQueue.main.async {
+            cell.titleMovieLabel.text = self.movies[indexPath.row].title
+            cell.yearMovieLabel.text = self.movies[indexPath.row].releaseDate
+            cell.overvwiewLabel.text = self.movies[indexPath.row].overview
+            cell.vote.text = self.movies[indexPath.row].voteAverageString
+            
+            if let posterPath = self.movies[indexPath.row].posterPath,
+               let url = URL(string: poster + posterPath) {
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let error = error {
+                        print("Error downloading image: \(error)")
+                        return
+                    }
+                    
+                    if let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.posterMovieImage.image = image
+                        }
+                    }
+                }.resume()
             }
         }
-        
+
         
         return cell
     }
@@ -167,3 +179,4 @@ extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewD
     }
     
 }
+
