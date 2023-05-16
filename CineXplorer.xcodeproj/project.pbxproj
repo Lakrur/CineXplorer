@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780855A02A13B74800A6A60E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7808559F2A13B74800A6A60E /* Constants.swift */; };
+		780855A52A13B84400A6A60E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780855A32A13B84400A6A60E /* SearchTableViewCell.swift */; };
 		78966E772A0FC305001B121E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966E762A0FC305001B121E /* AppDelegate.swift */; };
 		78966E792A0FC305001B121E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966E782A0FC305001B121E /* SceneDelegate.swift */; };
 		78966E7B2A0FC305001B121E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966E7A2A0FC305001B121E /* ViewController.swift */; };
 		78966E7E2A0FC305001B121E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78966E7C2A0FC305001B121E /* Main.storyboard */; };
 		78966E802A0FC307001B121E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78966E7F2A0FC307001B121E /* Assets.xcassets */; };
 		78966E832A0FC307001B121E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78966E812A0FC307001B121E /* LaunchScreen.storyboard */; };
+		78966E8C2A103A8D001B121E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966E8B2A103A8D001B121E /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7808559F2A13B74800A6A60E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		780855A32A13B84400A6A60E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		78966E732A0FC305001B121E /* CineXplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineXplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78966E762A0FC305001B121E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78966E782A0FC305001B121E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		78966E7F2A0FC307001B121E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78966E822A0FC307001B121E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78966E842A0FC307001B121E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78966E8B2A103A8D001B121E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7808559B2A12F63900A6A60E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78966E7C2A0FC305001B121E /* Main.storyboard */,
+				78966E812A0FC307001B121E /* LaunchScreen.storyboard */,
+				780855A32A13B84400A6A60E /* SearchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7808559C2A12F67600A6A60E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				7808559F2A13B74800A6A60E /* Constants.swift */,
+				78966E762A0FC305001B121E /* AppDelegate.swift */,
+				78966E782A0FC305001B121E /* SceneDelegate.swift */,
+				78966E7F2A0FC307001B121E /* Assets.xcassets */,
+				78966E842A0FC307001B121E /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		78966E6A2A0FC305001B121E = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +84,28 @@
 		78966E752A0FC305001B121E /* CineXplorer */ = {
 			isa = PBXGroup;
 			children = (
-				78966E762A0FC305001B121E /* AppDelegate.swift */,
-				78966E782A0FC305001B121E /* SceneDelegate.swift */,
-				78966E7A2A0FC305001B121E /* ViewController.swift */,
-				78966E7C2A0FC305001B121E /* Main.storyboard */,
-				78966E7F2A0FC307001B121E /* Assets.xcassets */,
-				78966E812A0FC307001B121E /* LaunchScreen.storyboard */,
-				78966E842A0FC307001B121E /* Info.plist */,
+				7808559B2A12F63900A6A60E /* Views */,
+				78966E8D2A103A98001B121E /* Models */,
+				78966E8A2A103A72001B121E /* View Controllers */,
+				7808559C2A12F67600A6A60E /* Supporting files */,
 			);
 			path = CineXplorer;
+			sourceTree = "<group>";
+		};
+		78966E8A2A103A72001B121E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				78966E7A2A0FC305001B121E /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		78966E8D2A103A98001B121E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78966E8B2A103A8D001B121E /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780855A02A13B74800A6A60E /* Constants.swift in Sources */,
+				78966E8C2A103A8D001B121E /* Movie.swift in Sources */,
 				78966E7B2A0FC305001B121E /* ViewController.swift in Sources */,
+				780855A52A13B84400A6A60E /* SearchTableViewCell.swift in Sources */,
 				78966E772A0FC305001B121E /* AppDelegate.swift in Sources */,
 				78966E792A0FC305001B121E /* SceneDelegate.swift in Sources */,
 			);
@@ -289,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AQPM435HZ6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CineXplorer/Info.plist;
+				INFOPLIST_FILE = "CineXplorer/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AQPM435HZ6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CineXplorer/Info.plist;
+				INFOPLIST_FILE = "CineXplorer/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
