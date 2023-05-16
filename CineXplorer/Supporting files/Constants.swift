@@ -7,4 +7,5 @@
 
 import Foundation
 
-let apiKey = "e5ffb1ed"
+let apiKey = "c9c058f3b07cdb889edbfbe986e2fddb"
+let poster = "https://image.tmdb.org/t/p/w500"
