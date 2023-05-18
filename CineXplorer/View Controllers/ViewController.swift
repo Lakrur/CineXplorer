@@ -26,11 +26,12 @@ class ViewController: UIViewController {
         
         fetchPopularMovies()
         
-        field.layer.cornerRadius = 15.0
+        field.layer.cornerRadius = 10.0
         field.layer.borderWidth = 2.0
-        field.layer.cornerRadius = field.frame.size.height/2
+        field.layer.cornerRadius = field.frame.size.height / 2.5
         field.clipsToBounds = true
         field.clearButtonMode = .whileEditing
+    
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -130,8 +131,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        if movies.count == 0 {
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            emptyLabel.text = "No Results"
+            emptyLabel.font = UIFont(name:"ArialRoundedMTBold", size: 18.0)
+            emptyLabel.textColor = .gray
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+            return 0
+        } else {
+            self.tableView.backgroundView = nil
+            return movies.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -179,10 +193,17 @@ extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-       // let url = "https://www.imdb.com/title/\(movies[indexPath.row].imdbID)/"
-        //let vc = SFSafariViewController(url: URL(string: url)!)
-        //present(vc, animated: true)
+        let movieTitle = movies[indexPath.row].title
+        
+        let encodedTitle = movieTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let searchURL = "https://www.imdb.com/find?q=\(encodedTitle)&s=tt"
+        
+        if let imdbSearchURL = URL(string: searchURL) {
+            let vc = SFSafariViewController(url: imdbSearchURL)
+            present(vc, animated: true)
+        }
     }
+
+
     
 }
-
