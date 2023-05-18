@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         tableView.backgroundColor = .black
         
         fetchPopularMovies()
+        
+        field.layer.cornerRadius = 15.0
+        field.layer.borderWidth = 2.0
+        field.layer.cornerRadius = field.frame.size.height/2
+        field.clipsToBounds = true
+        field.clearButtonMode = .whileEditing
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
