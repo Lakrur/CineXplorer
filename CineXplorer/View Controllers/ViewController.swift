@@ -31,7 +31,12 @@ class ViewController: UIViewController {
         field.layer.cornerRadius = field.frame.size.height / 2.5
         field.clipsToBounds = true
         field.clearButtonMode = .whileEditing
+        
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

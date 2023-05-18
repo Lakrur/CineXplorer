@@ -8,24 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movie-->
-        <scene sceneID="ziD-IK-8sY">
-            <objects>
-                <viewController id="IRI-Ge-xXN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RAH-Iw-o2P">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="IIz-fB-UMP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Movie" selectedImage="tv" catalog="system" id="rTh-z1-eCB">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N2o-Cu-4xl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-40" y="-711"/>
-        </scene>
         <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -45,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iwt-yy-jCy">
-                                <rect key="frame" x="0.0" y="124" width="393" height="635"/>
+                                <rect key="frame" x="0.0" y="124" width="393" height="645"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -145,12 +127,12 @@
                             <constraint firstItem="iwt-yy-jCy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ALG-Dj-5sh"/>
                             <constraint firstItem="d5m-Ov-1Yb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S1P-gp-xBS"/>
                             <constraint firstItem="d5m-Ov-1Yb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="UJv-co-5wQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iwt-yy-jCy" secondAttribute="bottom" constant="10" id="cxv-co-MwH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iwt-yy-jCy" secondAttribute="bottom" id="cxv-co-MwH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iwt-yy-jCy" secondAttribute="trailing" id="hX2-qb-s2o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d5m-Ov-1Yb" secondAttribute="trailing" constant="20" id="lmf-Ld-wAv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass" catalog="system" id="Zij-6P-PMN">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="Zij-6P-PMN">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
@@ -165,23 +147,40 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Cd7-tv-QYS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UrL-9B-lHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tor-iK-HOa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FUT-ik-rNe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1411764324" green="0.1411764324" blue="0.1411764324" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IRI-Ge-xXN" kind="relationship" relationship="viewControllers" id="tBe-LP-vkm"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ZaM-KF-bkd"/>
+                        <segue destination="GWi-Xj-8cO" kind="relationship" relationship="viewControllers" id="Tea-6x-EkJ"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UrL-9B-lHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1100" y="-295"/>
+        </scene>
+        <!--Movie-->
+        <scene sceneID="tcZ-lS-WKs">
+            <objects>
+                <viewController id="GWi-Xj-8cO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zj1-gL-ESY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eYo-kd-cQn"/>
+                        <color key="backgroundColor" red="0.1411764324" green="0.1411764324" blue="0.1411764324" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movie" image="tv" catalog="system" id="P5d-M1-tdn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zE5-uN-aeF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="-677"/>
         </scene>
     </scenes>
     <resources>
