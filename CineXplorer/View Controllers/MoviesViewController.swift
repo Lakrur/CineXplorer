@@ -80,7 +80,7 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            let cellHeight: CGFloat = 260
+            let cellHeight: CGFloat = 300
             return cellHeight
         }
 
@@ -99,6 +99,9 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreMoviesCell.reusableIdentifier, for: indexPath) as! GenreMoviesCell
 
+        cell.background.layer.cornerRadius = 10
+        cell.posterFilm.layer.cornerRadius = 5
+        
         DispatchQueue.main.async {
             cell.nameFilm.text = self.movies[indexPath.row].title
             cell.rateFilm.text = self.movies[indexPath.row].voteAverageString
