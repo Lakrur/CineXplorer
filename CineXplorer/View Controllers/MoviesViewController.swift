@@ -10,7 +10,9 @@ import UIKit
 class MoviesViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    
     var movies = [Movie]()
+    var genreMovies = [Genre]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class MoviesViewController: UIViewController {
         
         movies.removeAll()
         
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=\(apiKey)&with_genres=18")!) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=\(apiKey)&with_genres=\(Genre.drama.rawValue)")!) { [weak self] data, response, error in
             
             guard let data = data, error == nil else { return }
             
@@ -75,12 +77,13 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         cell.collectionView.collectionViewLayout = layout
+        
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            let cellHeight: CGFloat = 300
+            let cellHeight: CGFloat = 310
             return cellHeight
         }
 
@@ -99,8 +102,7 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreMoviesCell.reusableIdentifier, for: indexPath) as! GenreMoviesCell
 
-        cell.background.layer.cornerRadius = 10
-        cell.posterFilm.layer.cornerRadius = 5
+        cell.background.layer.cornerRadius = 15
         
         DispatchQueue.main.async {
             cell.nameFilm.text = self.movies[indexPath.row].title

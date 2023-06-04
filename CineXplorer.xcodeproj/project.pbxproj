@@ -23,6 +23,7 @@
 		78ECFFD42A2B91B600B0CF80 /* NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFD32A2B91B600B0CF80 /* NibLoading.swift */; };
 		78ECFFD82A2B933900B0CF80 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFD72A2B933900B0CF80 /* MoviesViewController.swift */; };
 		78ECFFDB2A2BA50300B0CF80 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFDA2A2BA50300B0CF80 /* MoviesTableViewCell.swift */; };
+		78ECFFDD2A2CAF3800B0CF80 /* GenreMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFDC2A2CAF3800B0CF80 /* GenreMovies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		78ECFFD32A2B91B600B0CF80 /* NibLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoading.swift; sourceTree = "<group>"; };
 		78ECFFD72A2B933900B0CF80 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		78ECFFDA2A2BA50300B0CF80 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
+		78ECFFDC2A2CAF3800B0CF80 /* GenreMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMovies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				78966E8B2A103A8D001B121E /* Movie.swift */,
+				78ECFFDC2A2CAF3800B0CF80 /* GenreMovies.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				78ECFFCE2A2B909900B0CF80 /* GenreMoviesCell.swift in Sources */,
 				78ECFFDB2A2BA50300B0CF80 /* MoviesTableViewCell.swift in Sources */,
 				780855AB2A13E08100A6A60E /* AddLeftImageToTxtField.swift in Sources */,
+				78ECFFDD2A2CAF3800B0CF80 /* GenreMovies.swift in Sources */,
 				78ECFFD42A2B91B600B0CF80 /* NibLoading.swift in Sources */,
 				78966E772A0FC305001B121E /* AppDelegate.swift in Sources */,
 				78966E792A0FC305001B121E /* SceneDelegate.swift in Sources */,

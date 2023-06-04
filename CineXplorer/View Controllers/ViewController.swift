@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     var movies = [Movie]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -189,7 +190,7 @@ extension ViewController: UITextFieldDelegate, UITableViewDelegate, UITableViewD
         let verticalPadding: CGFloat = 8
 
         let maskLayer = CALayer()
-        maskLayer.cornerRadius = 10  
+        maskLayer.cornerRadius = 10
         maskLayer.backgroundColor = UIColor.black.cgColor
         maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
         cell.layer.mask = maskLayer
