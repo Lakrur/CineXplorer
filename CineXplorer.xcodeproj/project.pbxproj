@@ -20,10 +20,10 @@
 		78ECFFCE2A2B909900B0CF80 /* GenreMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFCC2A2B909900B0CF80 /* GenreMoviesCell.swift */; };
 		78ECFFCF2A2B909900B0CF80 /* GenreMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78ECFFCD2A2B909900B0CF80 /* GenreMoviesCell.xib */; };
 		78ECFFD22A2B918300B0CF80 /* Cell-ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFD12A2B918300B0CF80 /* Cell-ID.swift */; };
-		78ECFFD42A2B91B600B0CF80 /* NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFD32A2B91B600B0CF80 /* NibLoading.swift */; };
 		78ECFFD82A2B933900B0CF80 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFD72A2B933900B0CF80 /* MoviesViewController.swift */; };
-		78ECFFDB2A2BA50300B0CF80 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFDA2A2BA50300B0CF80 /* MoviesTableViewCell.swift */; };
 		78ECFFDD2A2CAF3800B0CF80 /* GenreMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFDC2A2CAF3800B0CF80 /* GenreMovies.swift */; };
+		78ECFFDF2A2FD0C800B0CF80 /* NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFDE2A2FD0C800B0CF80 /* NibLoading.swift */; };
+		78ECFFE22A2FD14F00B0CF80 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECFFE12A2FD14F00B0CF80 /* MoviesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +42,10 @@
 		78ECFFCC2A2B909900B0CF80 /* GenreMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMoviesCell.swift; sourceTree = "<group>"; };
 		78ECFFCD2A2B909900B0CF80 /* GenreMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreMoviesCell.xib; sourceTree = "<group>"; };
 		78ECFFD12A2B918300B0CF80 /* Cell-ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell-ID.swift"; sourceTree = "<group>"; };
-		78ECFFD32A2B91B600B0CF80 /* NibLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoading.swift; sourceTree = "<group>"; };
 		78ECFFD72A2B933900B0CF80 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
-		78ECFFDA2A2BA50300B0CF80 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		78ECFFDC2A2CAF3800B0CF80 /* GenreMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMovies.swift; sourceTree = "<group>"; };
+		78ECFFDE2A2FD0C800B0CF80 /* NibLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoading.swift; sourceTree = "<group>"; };
+		78ECFFE12A2FD14F00B0CF80 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 				780855A32A13B84400A6A60E /* SearchTableViewCell.swift */,
 				78ECFFCC2A2B909900B0CF80 /* GenreMoviesCell.swift */,
 				78ECFFCD2A2B909900B0CF80 /* GenreMoviesCell.xib */,
-				78ECFFDA2A2BA50300B0CF80 /* MoviesTableViewCell.swift */,
+				78ECFFE12A2FD14F00B0CF80 /* MoviesTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				78ECFFD12A2B918300B0CF80 /* Cell-ID.swift */,
-				78ECFFD32A2B91B600B0CF80 /* NibLoading.swift */,
+				78ECFFDE2A2FD0C800B0CF80 /* NibLoading.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,11 +226,11 @@
 				78966E7B2A0FC305001B121E /* ViewController.swift in Sources */,
 				780855A52A13B84400A6A60E /* SearchTableViewCell.swift in Sources */,
 				78ECFFCE2A2B909900B0CF80 /* GenreMoviesCell.swift in Sources */,
-				78ECFFDB2A2BA50300B0CF80 /* MoviesTableViewCell.swift in Sources */,
 				780855AB2A13E08100A6A60E /* AddLeftImageToTxtField.swift in Sources */,
 				78ECFFDD2A2CAF3800B0CF80 /* GenreMovies.swift in Sources */,
-				78ECFFD42A2B91B600B0CF80 /* NibLoading.swift in Sources */,
+				78ECFFDF2A2FD0C800B0CF80 /* NibLoading.swift in Sources */,
 				78966E772A0FC305001B121E /* AppDelegate.swift in Sources */,
+				78ECFFE22A2FD14F00B0CF80 /* MoviesTableViewCell.swift in Sources */,
 				78966E792A0FC305001B121E /* SceneDelegate.swift in Sources */,
 				78ECFFD22A2B918300B0CF80 /* Cell-ID.swift in Sources */,
 			);

@@ -220,7 +220,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collectionView" destination="NFW-4u-LF9" id="KQh-Zg-a1T"/>
-                                            <outlet property="genreMovie" destination="p79-nd-Fww" id="dH8-1y-plp"/>
+                                            <outlet property="genreMovieName" destination="p79-nd-Fww" id="zWu-FW-SHO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
