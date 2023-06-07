@@ -35,6 +35,8 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: MoviesTableViewCell.reusableIdentifier, for: indexPath) as! MoviesTableViewCell
             
             cell.collectionView.register(GenreMoviesCell.loadNib(), forCellWithReuseIdentifier: GenreMoviesCell.reusableIdentifier)
+        
+            cell.moviesViewController = self
             
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal

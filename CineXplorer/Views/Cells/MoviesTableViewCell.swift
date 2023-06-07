@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 
 class MoviesTableViewCell: UITableViewCell, HasCellID {
@@ -16,17 +17,12 @@ class MoviesTableViewCell: UITableViewCell, HasCellID {
     var movies = [Movie]()
     var genreMovies = [Genre]()
     
+    var moviesViewController: UIViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.delegate = self
         collectionView.dataSource = self
-    }
-
-    
-    func fetchedAllGenres() {
-        for genre in Genre.allCases {
-            genreFilms(genre: genre)
-        }
     }
 
     func genreFilms(genre: Genre) {
@@ -101,6 +97,20 @@ extension MoviesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         }
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let movieTitle = movies[indexPath.row].title
+        
+        let encodedTitle = movieTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let searchURL = "https://www.imdb.com/find?q=\(encodedTitle)&s=tt"
+        
+        if let imdbSearchURL = URL(string: searchURL) {
+            let vc = SFSafariViewController(url: imdbSearchURL)
+            moviesViewController?.present(vc, animated: true)
+        }
     }
 }
 
